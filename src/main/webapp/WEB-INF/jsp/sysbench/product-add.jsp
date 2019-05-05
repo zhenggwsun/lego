@@ -107,10 +107,8 @@
                 url: '/sysbench/product/upload'
                 ,success: function(res){
                     $('#show').attr('src', "/uploaded/"+res.data);
-                    $('#show-div').attr('display', null);
 
                     layer.msg("上传成功");
-                    layer.msg(res.data);
                     $('#photo-path').val(res.data);
                 }
             });
