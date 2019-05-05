@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="mybatisGenerator/mybatisGenerator.properties"/>
+
+    <context id="lego" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <!-- 注释 -->
+        <commentGenerator >
+            <!-- 是否取消注释 -->
+            <property name="suppressAllComments" value="false"/>
+            <!-- 是否生成注释代时间戳-->
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+
+        <!--数据库连接信息-->
+        <jdbcConnection driverClass="${jdbc.driverClass}" connectionURL="${jdbc.connectionURL}"
+                        userId="${jdbc.userId}" password="${jdbc.password}">
+        </jdbcConnection>
+
+        <!--类型转换-->
+        <javaTypeResolver >
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 生成实体类地址 -->
+        <javaModelGenerator targetPackage="${package.do}" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--生成mapper-->
+        <sqlMapGenerator targetPackage="${package.mapper}"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+
+        <!--dao接口-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${package.dao}"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!--<table tableName="lego_product" domainObjectName="ProductDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>
+
+        <table tableName="lego_product_repertory" domainObjectName="RepertoryDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>
+        <table tableName="lego_user" domainObjectName="UserDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>
+        <table tableName="lego_user_info" domainObjectName="UserInfoDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>-->
+        <!--<table tableName="lego_product_repertory" domainObjectName="RepertoryDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>-->
+
+        <!--<table tableName="lego_address" domainObjectName="AddressDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>-->
+
+        <!--<table tableName="lego_order" domainObjectName="OrderDO" >
+            &lt;!&ndash; 数据库表主键 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>-->
+        <table tableName="lego_user_info" domainObjectName="UserInfoDO" >
+            <!-- 数据库表主键 -->
+            <generatedKey column="id" sqlStatement="select last_insert_id()" identity="true" />
+        </table>
+
+    </context>
+</generatorConfiguration>

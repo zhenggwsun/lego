@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录-X-admin1.1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+
+</head>
+<body>
+    <!-- 中部开始 -->
+    <div class="wrapper">
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+              <form class="layui-form">
+
+                  <div class="layui-form-item">
+                      <label for="L_product_id" class="layui-form-label">
+                          商品id
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="number" id="L_product_id" name="product_id" required lay-verify="product_id"
+                                 autocomplete="off" value="1" class="layui-input">
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_size" class="layui-form-label">
+                          尺码
+                      </label>
+                      <div class="layui-input-inline">
+                          <select id="L_size" name="size" lay-verify="">
+                              <option value="">36</option>
+                              <option value="010">37</option>
+                              <option value="021">38</option>
+                              <option value="021">39</option>
+                              <option value="021">40</option>
+                              <option value="0571">41</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_for_sale" class="layui-form-label">
+                          库存
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="number" id="L_for_sale" name="for_sale" value="69"
+                                 class="layui-input">
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_save" class="layui-form-label">
+                      </label>
+                      <div class="layui-input-inline">
+                          <button id="L_save"class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
+                              保存
+                          </button>
+                      </div>
+
+                  </div>
+              </form>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+    <script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+</html>

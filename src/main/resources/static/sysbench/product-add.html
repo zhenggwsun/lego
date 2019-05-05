@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后台登录-X-admin1.1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+	<link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+
+</head>
+<body>
+    <!-- 中部开始 -->
+    <div class="wrapper">
+        <!-- 右侧主体开始 -->
+        <div class="page-content">
+          <div class="content">
+            <!-- 右侧内容框架，更改从这里开始 -->
+              <form class="layui-form">
+                  <div class="layui-form-item">
+                      <label for="L_product_name" class="layui-form-label">
+                          图片
+                      </label>
+                      <div class="layui-input-inline">
+                          <button type="button" class="layui-btn" id="test1">
+                              <i class="layui-icon"></i>上传图片
+                          </button>
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_product_name" class="layui-form-label">
+                          商品名称
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="text" id="L_product_name" name="product_name" required lay-verify="product_name"
+                                 autocomplete="off" value="2017夏季新款简约粗跟中" class="layui-input">
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_categroy" class="layui-form-label">
+                          分类
+                      </label>
+                      <div class="layui-input-inline">
+                          <select id="L_categroy" name="categroy" lay-verify="">
+                              <option value="">运动鞋</option>
+                              <option value="010">休闲鞋</option>
+                              <option value="021">女靴</option>
+                              <option value="021">凉鞋</option>
+                              <option value="021">单鞋</option>
+                              <option value="0571">高跟鞋</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_price" class="layui-form-label">
+                          价格
+                      </label>
+                      <div class="layui-input-inline">
+                          <input type="number" id="L_price" name="price" value="69.99"
+                                 class="layui-input">
+                      </div>
+                  </div>
+                  <div class="layui-form-item layui-form-text">
+                      <label for="L_sign" class="layui-form-label">
+                          产品描述
+                      </label>
+                      <div class="layui-input-block">
+                        <textarea placeholder="随便写些什么刷下存在感" id="L_sign" name="sign" autocomplete="off"
+                                  class="layui-textarea" style="height: 80px;"></textarea>
+                      </div>
+                  </div>
+                  <div class="layui-form-item">
+                      <label for="L_sign" class="layui-form-label">
+                      </label>
+                      <button class="layui-btn" key="set-mine" lay-filter="save" lay-submit>
+                          保存
+                      </button>
+                  </div>
+              </form>
+            <!-- 右侧内容框架，更改从这里结束 -->
+          </div>
+        </div>
+        <!-- 右侧主体结束 -->
+    </div>
+    <!-- 中部结束 -->
+    <script>
+    //百度统计可去掉
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</body>
+</html>
