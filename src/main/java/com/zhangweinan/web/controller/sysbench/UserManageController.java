@@ -55,6 +55,13 @@ public class UserManageController {
             e.printStackTrace();
         }
     }
+    @RequestMapping(value = "queryAgeCountCharts", method = RequestMethod.GET)
+    @ResponseBody
+    public Result queryAgeCountCharts(HttpServletRequest request, HttpServletResponse response){
+        Result result = userService.queryAgeCountCharts();
+        return result;
+    }
+
 
 
 

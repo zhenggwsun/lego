@@ -57,7 +57,8 @@ public class SpringMVCConfig extends WebMvcConfigurerAdapter{
             "/sysbench/order/export",
             "/sysbench/index",
             "/sysbench/productAdd",
-            "/sysbench/repertoryAdd"
+            "/sysbench/repertoryAdd",
+            "/sysbench/echarts1"
     };
 
     @Override

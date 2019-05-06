@@ -2,6 +2,7 @@ package com.zhangweinan.component;
 
 import com.zhangweinan.dao.objects.UserDO;
 import com.zhangweinan.model.common.PaginationModel;
+import com.zhangweinan.model.model.UserAgeChartsModel;
 import com.zhangweinan.model.model.UserExportModel;
 import com.zhangweinan.model.model.UserModel;
 import com.zhangweinan.model.order.UserOrder;
@@ -48,4 +49,6 @@ public interface UserComponent {
      * @return
      */
     public List<UserExportModel> queryUserList();
+
+    public UserAgeChartsModel queryAgeCountCharts();
 }

@@ -5,6 +5,7 @@ import com.zhangweinan.dao.objects.RepertoryDO;
 import com.zhangweinan.dao.objects.UserDO;
 import com.zhangweinan.model.common.PaginationModel;
 import com.zhangweinan.model.common.Result;
+import com.zhangweinan.model.model.UserAgeChartsModel;
 import com.zhangweinan.model.model.UserExportModel;
 import com.zhangweinan.model.model.UserModel;
 import com.zhangweinan.model.order.UserOrder;
@@ -76,6 +77,14 @@ public class UserServiceImpl implements UserService{
         Result result = new Result();
         List<UserExportModel> userExportModels = userComponent.queryUserList();
         result.fillSuccData(userExportModels);
+        return result;
+    }
+
+    @Override
+    public Result queryAgeCountCharts() {
+        Result result = new Result();
+        UserAgeChartsModel model = userComponent.queryAgeCountCharts();
+        result.fillSuccData(model);
         return result;
     }
 }

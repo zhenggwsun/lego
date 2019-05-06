@@ -33,4 +33,9 @@ public class RouteController {
     public String repertoryAdd(HttpServletRequest request, HttpServletResponse response){
         return "/sysbench/repertory-add";
     }
+
+    @RequestMapping(value = "sysbench/echarts1", method = RequestMethod.GET)
+    public String echarts1(HttpServletRequest request, HttpServletResponse response){
+        return "/sysbench/echarts1";
+    }
 }

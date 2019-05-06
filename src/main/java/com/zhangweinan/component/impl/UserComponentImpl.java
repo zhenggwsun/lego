@@ -10,6 +10,7 @@ import com.zhangweinan.model.convert.UserConvert;
 import com.zhangweinan.model.enums.UserTypeEnum;
 import com.zhangweinan.model.enums.WebsiteCodeEnum;
 import com.zhangweinan.model.exception.WebsiteException;
+import com.zhangweinan.model.model.UserAgeChartsModel;
 import com.zhangweinan.model.model.UserExportModel;
 import com.zhangweinan.model.model.UserModel;
 import com.zhangweinan.model.order.UserOrder;
@@ -95,5 +96,20 @@ public class UserComponentImpl implements UserComponent{
 
         List<UserExportModel> list = userDOMapper.selectList();
         return list;
+    }
+
+    @Override
+    public UserAgeChartsModel queryAgeCountCharts() {
+        UserAgeChartsModel model = new UserAgeChartsModel();
+        int ltTwenty = userInfoDOMapper.selectCountAgeltTwenty();
+        int ttof = userInfoDOMapper.selectCountAgeTwentyToForty();
+        int ftos= userInfoDOMapper.selectCountAgeFortyToSixty();
+        int gtSixty = userInfoDOMapper.selectCountAgegtSixty();
+
+        model.setLtTwenty(ltTwenty);
+        model.setTwentyToForty(ttof);
+        model.setFortyToSixty(ftos);
+        model.setGtSixty(gtSixty);
+        return model;
     }
 }

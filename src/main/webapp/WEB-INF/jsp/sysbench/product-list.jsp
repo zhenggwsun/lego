@@ -106,7 +106,7 @@
                     </ul>
                 </li>
 
-              <%--  <li class="list" >
+                <li class="list" >
                     <a href="javascript:;">
                         <i class="iconfont">&#xe6a3;</i>
                         系统统计
@@ -114,49 +114,13 @@
                     </a>
                     <ul class="sub-menu" style="display:none">
                         <li>
-                            <a href="./echarts1.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                拆线图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts2.html">
+                            <a href="/sysbench/echarts1">
                                 <i class="iconfont">&#xe6a7;</i>
                                 柱状图
                             </a>
                         </li>
-                        <li>
-                            <a href="./echarts3.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                地图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts4.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                饼图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts5.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                k线图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="./echarts6.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                仪表图
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://echarts.baidu.com/examples.html">
-                                <i class="iconfont">&#xe6a7;</i>
-                                更多案例
-                            </a>
-                        </li>
                     </ul>
-                </li>--%>
+                </li>
             </ul>
         </div>
     </div>

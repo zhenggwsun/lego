@@ -1,11 +1,10 @@
 <%--
   Created by IntelliJ IDEA.
   User: Eric
-  Date: 2019/5/3
-  Time: 16:27
+  Date: 2019/5/6
+  Time: 20:49
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
@@ -21,6 +20,7 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
     <script src="${pageContext.request.contextPath}/sysbench/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/sysbench/js/xadmin.js"></script>
+    <script src="http://cdn.bootcss.com/echarts/3.3.2/echarts.min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -111,14 +111,13 @@
                         系统统计
                         <i class="iconfont nav_right">&#xe697;</i>
                     </a>
-                    <ul class="sub-menu" style="display:none">
-                        <li>
+                    <ul class="sub-menu opened">
+                        <li class="current">
                             <a href="/sysbench/echarts1">
                                 <i class="iconfont">&#xe6a7;</i>
                                 柱状图
                             </a>
                         </li>
-
                     </ul>
                 </li>
             </ul>
@@ -128,16 +127,14 @@
     <!-- 右侧主体开始 -->
     <div class="page-content">
         <div class="content">
-            <!-- 右侧内容框架，更改从这里开始 -->
-            <blockquote class="layui-elem-quote">
-                <strong>Welcome to Lego Store !</strong>
-            </blockquote>
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="main" style="width: 100%;height:400px;"></div>
+            <!-- 右侧内容框架，更改从这里结束 -->
         </div>
     </div>
     <!-- 右侧主体结束 -->
 </div>
 <!-- 中部结束 -->
-
 <!-- 底部结束 -->
 <!-- 背景切换开始 -->
 <div class="bg-changer">
@@ -161,5 +158,48 @@
     <div id="changer-set"><i class="iconfont">&#xe696;</i></div>
 </div>
 <!-- 背景切换结束 -->
+
+<script src="http://cdn.bootcss.com/echarts/3.3.2/echarts.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/echarts-for-x-admin.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        $.get("/sysbench/user/queryAgeCountCharts",function (data,staus){
+            console.log(data)
+            console.log(data.data.ltTwenty)
+            console.log(data.data.TwentyToForty)
+            console.log(data.data.FortyToSixty)
+            console.log(data.data.gtSixty)
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+
+            // 指定图表的配置项和数据
+            var option = {
+                title: {
+                    text: '用户年龄段分布'
+                },
+                tooltip: {},
+                legend: {
+                    data:['人数']
+                },
+                xAxis: {
+                    data: ["20岁以下","20-40岁","40-60岁","60岁以上"]
+                },
+                yAxis: {},
+                series: [{
+                    name: '人数',
+                    type: 'bar',
+                    data: [data.data.ltTwenty, data.data.twentyToForty, data.data.fortyToSixty, data.data.gtSixty]
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        })
+    });
+
+</script>
 </body>
 </html>

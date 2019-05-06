@@ -72,4 +72,26 @@
     select id, gmt_create, gmt_modify, real_name, sex, age, tel, address, user_id
     from lego_user_info
   </select>
+
+  <select id="selectCountAgeltTwenty" resultType="java.lang.Integer">
+    select COUNT(1)
+    from lego_user_info WHERE age <![CDATA[ < ]]> 20
+  </select>
+
+  <select id="selectCountAgeTwentyToForty" resultType="java.lang.Integer">
+    select COUNT(1)
+    from lego_user_info WHERE age <![CDATA[ >= ]]> 20 and age <![CDATA[ < ]]> 40
+  </select>
+
+  <select id="selectCountAgeFortyToSixty" resultType="java.lang.Integer">
+    select COUNT(1)
+    from lego_user_info WHERE  age <![CDATA[ >= ]]> 40 and age <![CDATA[ < ]]> 60
+  </select>
+
+  <select id="selectCountAgegtSixty" resultType="java.lang.Integer">
+    select COUNT(1)
+    from lego_user_info WHERE age <![CDATA[ >= ]]> 60
+  </select>
+
+
 </mapper>

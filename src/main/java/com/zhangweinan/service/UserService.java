@@ -52,4 +52,5 @@ public interface UserService {
      */
     public Result queryUserList();
 
+    public Result queryAgeCountCharts();
 }
