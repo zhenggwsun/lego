@@ -10,6 +10,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .unchecked{
+            border:  1px  solid  gray;
+            padding:  1px  1px  1px  1px;
+        }
+        .checked{
+            border:  1px  solid  #c00;
+            padding:  1px  1px  1px  1px;
+        }
+    </style>
     <title>Lego Fashion</title>
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +43,42 @@
     <script src="${pageContext.request.contextPath}/home/javascript/global.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/home/javascript/product.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/home/owl-carousel/owl.carousel.min.js" type="text/javascript"></script><script type="text/javascript" src="${pageContext.request.contextPath}/home/javascript/jquery.fancybox.js"></script>
+    <script  type="text/javascript">
+        var  obj={
+            colorSpan:"",
+            sizeSpan:""
+        };
+        function  change(span)
+        {
+            $(span).prev().attr("checked",'checked');
+
+            var  value  =    $("input[name='size']:checked").val();
+            console.log(value);
+            $('span[name="'+$(span).attr('name')+'"]').each(function(){
+                if(this.checked&&this!=span)
+                {
+                    this.className="unchecked";
+                    this.checked=false;
+                }
+            });
+            obj[$(span).attr('name')]=span.innerHTML;
+            span.className="checked";
+            span.checked=true;
+            select();
+        }
+        function  select()
+        {
+            var  html='';
+            for(var  i  in  obj)
+            {
+                if(obj[i]!='')
+                {
+                    html+='<font  color=orange>"'+  obj[i]+'"</font>  、';
+                }
+            }
+
+        }
+    </script>
 </head>
 <body class="product col-2 left-col">
 <div class="preloader loader" style="display: block;"> <img src="${pageContext.request.contextPath}/home/image/loader.gif"  alt="#"/></div>
@@ -161,17 +207,10 @@
                             <span> ${requestScope.ProductModel.product.id}</span></li>
                         <li>
                             <label>尺码:</label>
-                            <span>
                                 <c:forEach items="${requestScope.ProductModel.repertory}" var="model">
-                                    <%--<c:if test="${key == 1}">
-                                    <label><input name="size" type="radio" value="${model.size}" checked="checked"/>${model.size} </label>
-                                    </c:if>
-                                    <c:if test="${key != 1}">
-                                        <label><input name="size" type="radio" value="${model.size}"/>${model.size} </label>
-                                    </c:if>--%>
-                                    <label><input name="size" type="radio" value="${model.size}"/>${model.size} </label>
+                                    <input  type="radio"  name="size"  value="${model.size}"  style="display:none"/>
+                                    <span  class='unchecked'    name='sizeSpan'    checked='false'  onclick='change(this);'  >${model.size}</span>
                                 </c:forEach>
-                            </span>
                         </li>
                     </ul>
                     <hr>
